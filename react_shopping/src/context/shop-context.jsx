@@ -5,7 +5,7 @@ import { createContext, useEffect, useState } from "react";
 export const ShopContext = createContext(null);
 
 const getDefaultCart = () => {
-    let cart = {}
+    let cart = {};
     for (let i = 1; i < PRODUCTS.length + 1; i++){
         cart[i] = 0;
     }
