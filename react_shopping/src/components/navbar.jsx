@@ -27,12 +27,18 @@ export const Navbar = () => {
         </div>
         <Modal isOpen={isModalOpen} onRequestClose={handleModalClose}>
           <div>
+            <div>
+            <b>Username</b>
+            </div>
             <input type="username"/>
           </div>
           <div>
+          <div>
+            <b>Password</b>
+            </div>
           <input type="password"/>
           </div>
-          <button onClick={handleModalClose}>Close Modal</button>
+          <button onClick={handleModalClose}>Close</button>
         </Modal>
     </div>
   )

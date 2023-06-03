@@ -26,7 +26,7 @@
   
   .product img {
     width: auto;
-    height: 150px;
+    max-height: 150px;
     object-fit: contain;
     object-position: center;
   }
@@ -34,8 +34,17 @@
   .product .description {
     text-align: center;
     flex-grow: 1; 
+    margin: 0;
   }
   
+  .product .description .price{
+    margin: 0;
+  }
+
+  .product .description .name{
+    margin: 0;
+  }
+
   .product:hover {
     transition: 0.3s ease-in;
     cursor: pointer;

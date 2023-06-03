@@ -12,10 +12,10 @@ export const Product = (props) => {
         <img src={productImage} />
 
         <div className="description">
-            <p>
+            <p className='name'>
                 <b>{productName}</b>
             </p>
-            <p>
+            <p className='price'>
                 ${price}
             </p>
         </div>

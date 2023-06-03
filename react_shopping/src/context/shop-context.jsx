@@ -13,10 +13,31 @@ const getDefaultCart = () => {
 
 export const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState(getDefaultCart());
+    const [productList, SetProductList] = useState([]);
 
-    // const getTotalCartAmount = () => {
-    //     let totalAmount = 0;
-    // }
+    const GetProducts = async () => {
+        const temp = await fetch('https://fakestoreapi.com/products')
+        .then(res=>res.json())
+        console.log(temp);
+
+        SetProductList(temp)
+    }
+
+    useEffect(() => {
+        GetProducts();
+    }, [])
+
+    const getTotalCartAmount = () => {
+        let totalAmount = 0;
+        for (const item in cartItems) {
+            if (cartItems[item] > 0){
+                let itemInfo = productList.find((product) => product.id === Number(item));
+                totalAmount += cartItems[item] * itemInfo.price;
+            }
+        }
+        return totalAmount;
+
+    }
 
     const addToCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1}));
@@ -34,7 +55,8 @@ export const ShopContextProvider = (props) => {
         cartItems, 
         addToCart, 
         removeFromCart,
-        updateCartItemCount
+        updateCartItemCount,
+        getTotalCartAmount,
     };
 
   return (
