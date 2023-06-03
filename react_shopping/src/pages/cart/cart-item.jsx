@@ -16,7 +16,7 @@ export const CartItem = (props) => {
                     </b>
                 </p>
                 <p>
-                    ${price}
+                    ${(price).toFixed(2)}
                 </p>
                 <div className="countHandler">
                     <button onClick={() => removeFromCart(id)}> - </button>

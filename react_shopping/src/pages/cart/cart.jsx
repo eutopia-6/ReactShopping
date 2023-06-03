@@ -38,7 +38,7 @@ export const Cart = () => {
         { (() => {
           if(totalAmount > 0){
             return (<div className="checkout">
-              <p> Subtotal: ${totalAmount}</p>
+              <p> Subtotal: ${(totalAmount).toFixed(2)}</p>
               <Link to="/">
                 <button>Continue Shopping</button>
               </Link>
