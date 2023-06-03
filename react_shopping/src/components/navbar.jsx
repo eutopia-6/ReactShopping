@@ -1,9 +1,15 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import { ShoppingCart, UserCircle } from "phosphor-react";
+import { useState, useEffect } from 'react';
 import "./navbar.css";
+import Modal from 'react-modal';
 
 export const Navbar = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const handleModalOpen = () => {setIsModalOpen(true);};
+  const handleModalClose = () => {setIsModalOpen(false);};
+
   return (
     <div className="navbar">
         <div className="links">
@@ -14,11 +20,20 @@ export const Navbar = () => {
                 <ShoppingCart size={40}/>
             </Link>
             <div className="user">
-              <Link>
+              <Link onClick={handleModalOpen}>
                 <UserCircle size={40} color='white'/>
               </Link>
             </div>
         </div>
+        <Modal isOpen={isModalOpen} onRequestClose={handleModalClose}>
+          <div>
+            <input type="username"/>
+          </div>
+          <div>
+          <input type="password"/>
+          </div>
+          <button onClick={handleModalClose}>Close Modal</button>
+        </Modal>
     </div>
   )
 }

@@ -32,3 +32,22 @@
     margin-left: 20px;
     font-size: 25px;
   }
+
+  .ReactModal__Overlay {
+    /* Style for the modal overlay */
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ReactModal__Content {
+    /* Style for the modal content */
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    background-color: #fff;
+  }
