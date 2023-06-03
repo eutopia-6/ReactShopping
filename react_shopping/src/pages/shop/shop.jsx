@@ -1,9 +1,8 @@
 import React from 'react';
-import { PRODUCTS } from "../../products";
 import { useState, useEffect } from 'react';
 import { Product } from "./product";
 import "./shop.css";
-import { Cart } from '../cart/cart';
+
 
 export const Shop = () => {
   const [productList, SetProductList] = useState([]);

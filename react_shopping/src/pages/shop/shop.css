@@ -14,22 +14,26 @@
   
   .product {
     border-radius: 15px;
-    width: 300px;
-    height: 350px;
-    margin: 100px;
+    width: 250px;
+    height: 300px;
+    margin: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   
+  
   .product img {
-    width: 400px;
-    height: 400px;
+    width: auto;
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
   }
   
   .product .description {
     text-align: center;
+    flex-grow: 1; 
   }
   
   .product:hover {

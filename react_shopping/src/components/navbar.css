@@ -8,11 +8,24 @@
   }
   
   .links {
-    margin-right: 50px;
+    margin-right: 30px;
     display: flex;
     align-items: center;
   }
   
+  .links .shop {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  .user {
+    margin-right: 10px;
+    float: left;
+    color: white;
+  }
+
   .links a {
     text-decoration: none;
     color: white;

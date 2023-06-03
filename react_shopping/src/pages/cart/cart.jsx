@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { PRODUCTS } from '../../products';
 import { ShopContext } from '../../context/shop-context';
 import { CartItem } from "./cart-item"
 import { Shop } from '../shop/shop';
@@ -24,7 +23,7 @@ export const Cart = () => {
   return (
     <div className="cart">
       <div>
-        <h1>You Cart Items</h1>
+        <h1>Your Cart Items</h1>
       </div>
       <div className="cartItems">
         {productList.map((product) => {
@@ -33,6 +32,11 @@ export const Cart = () => {
             return <CartItem data={product}/>;
           }
         })}
+      </div>
+      <div className="checkout">
+        <p> Subtotal $</p>
+        <button>Continue Shopping</button>
+        <button> Checkout </button>
       </div>
     </div>
   )
