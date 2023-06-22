@@ -1,6 +1,5 @@
 import React, { useCallback, useContext } from 'react'
 import {ShopContext} from "../../context/shop-context";
-import { Shop } from './shop';
 
 export const Product = (props) => {
     const { id, title:productName, price, image:productImage } = props.data;
@@ -10,7 +9,6 @@ export const Product = (props) => {
   return (
     <div className="product">
         <img src={productImage} />
-
         <div className="description">
             <p className='name'>
                 <b>{productName}</b>
@@ -26,7 +24,6 @@ export const Product = (props) => {
                 ({cartItemAmount})
                 </>}
         </button>
-
     </div>
   )
 }

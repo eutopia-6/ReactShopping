@@ -14,13 +14,14 @@
   }
   
   .links .shop {
-    margin-right: 10px;
+    margin-right: 3px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
   }
 
   .user {
+    margin-top: 2px;
     margin-right: 10px;
     float: left;
     color: white;
@@ -34,15 +35,12 @@
   }
 
   .ReactModal__Overlay {
-    /* Style for the modal overlay */
-    backdrop-filter: blur(3px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    opacity: 0;
+    transition: opacity 2000ms ease-in-out;
+    
   }
   
   .ReactModal__Content {
-    /* Style for the modal content */
     width: 400px;
     height: 200px;
     margin: auto;
@@ -50,4 +48,22 @@
     border-radius: 4px;
     padding: 20px;
     background-color: #fff;
+  }
+
+  .ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+
+  .ReactModal__Overlay--before-close{
+    opacity: 0;
+}
+
+  #signInDiv {
+    margin-left: 20px;
+    margin-bottom: 3px;
+  }
+
+  .username {
+    color: white;
+    margin-left: 20px;
   }
