@@ -1,12 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import { ShoppingCart, UserCircle } from "phosphor-react";
+import { ShoppingCart, UserCircle } from 'phosphor-react';
 import { useState, useEffect } from 'react';
 import "./navbar.css";
 import Modal from 'react-modal';
 import { GoogleLogin, useGoogleLogin } from '@react-oauth/google';
-import jwt_decode from "jwt-decode";
-
+import jwt_decode from 'jwt-decode';
 
 export const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,21 +40,27 @@ export const Navbar = () => {
             </div>
         </div>
         <Modal 
-        closeTimeoutMS={2000} 
+        closeTimeoutMS={1500} 
         isOpen={isModalOpen} 
         onRequestClose={handleModalClose} 
         shouldCloseOnOverlayClick={true}>
           <div className='modal-content'>
-              <input 
-              className='usernameBox' 
-              type="username"
-              placeholder='Username'/>
+              <form className='signinform'>
+                <input 
+                className='usernameBox' 
+                type="username"
+                placeholder='Username'/>
 
-              <input 
-              className='passwordBox' 
-              type="password"
-              placeholder='Password'/>
-            <button type='submit'>Sign In</button>
+                <input 
+                className='passwordBox' 
+                type="password"
+                placeholder='Password'/>
+                
+                <button 
+                className='signin' 
+                type='submit'>
+                Sign In</button>
+              </form>
             <p>or you can sign in with</p>
             <div className='googleIcon'>
               <GoogleLogin
