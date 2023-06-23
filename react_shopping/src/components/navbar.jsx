@@ -40,7 +40,7 @@ export const Navbar = () => {
             </div>
         </div>
         <Modal 
-        closeTimeoutMS={1500} 
+        closeTimeoutMS={1000} 
         isOpen={isModalOpen} 
         onRequestClose={handleModalClose} 
         shouldCloseOnOverlayClick={true}>
