@@ -42,7 +42,7 @@
   
   .ReactModal__Content {
     width: 400px;
-    height: 350px;
+    height: 395px;
     margin: auto;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -103,6 +103,7 @@
     color: white;
     background-color: black;
     border-radius: 5px;
+    font-size: 15px;
   } 
 
   .signout {
@@ -132,4 +133,29 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .signinform .links {
+    display: flex;
+    width: 400px;
+    justify-content: flex-end;
+    align-items:flex-end;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    margin-top: 5px;
+  
+  }
+
+  .signinform .links:hover {
+    cursor: pointer;
+  }
+
+  .modal-content-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around;
+    text-align: center;
+    height: 100%;
   }

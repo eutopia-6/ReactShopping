@@ -10,11 +10,15 @@ import jwt_decode from 'jwt-decode';
 export const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSignOutOpen, setSignOutOpen] = useState(false);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [user, setUser] = useState(0);
   const handleModalOpen = () => {setIsModalOpen(true);};
   const handleModalClose = () => {setIsModalOpen(false)};
   const handleSignOutOpen = () => {setSignOutOpen(true)};
   const handleSignOutClose = () => {setSignOutOpen(false)};
+  const handleRegisterOpen = () => {setIsRegisterOpen(true)};
+  const handleRegisterClose = () => {setIsRegisterOpen(false)};
+
 
   const getUser = (credentialResponse) => {
     var userObject = jwt_decode(credentialResponse);
@@ -27,6 +31,11 @@ export const Navbar = () => {
     setUser(0);
     handleSignOutClose();
     document.getElementById("user").hidden = false;
+  }
+
+  const openRegister = () => {
+    handleModalClose();
+    handleRegisterOpen();
   }
 
   return (
@@ -71,6 +80,10 @@ export const Navbar = () => {
                 className='signin' 
                 type='submit'>
                 Sign In</button>
+
+                <Link className='links' onClick={openRegister}>
+                  Sign Up
+                </Link>
               </form>
             <p>or you can sign in with</p>
             <div className='googleIcon'>
@@ -99,6 +112,30 @@ export const Navbar = () => {
                 onClick={userLogOut}>
                 Sign Out</button>
           </div>
+        </Modal>
+        <Modal 
+        closeTimeoutMS={1000} 
+        isOpen={isRegisterOpen} 
+        onRequestClose={handleRegisterClose} 
+        shouldCloseOnOverlayClick={true}>
+          <div className='modal-content-register'>
+            <form className='signinform'>
+                <input 
+                className='usernameBox' 
+                type="username"
+                placeholder='Username'/>
+
+                <input 
+                className='passwordBox' 
+                type="password"
+                placeholder='Password'/>
+                
+                <button 
+                className='signin' 
+                type='submit'>
+                Register</button>
+              </form>
+              </div>
         </Modal>
     </div>
   )
