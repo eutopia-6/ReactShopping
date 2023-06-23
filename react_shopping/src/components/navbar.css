@@ -64,10 +64,10 @@
 
   .username {
     color: white;
-    margin-left: 20px;
+    margin-left: 5px;
     margin-bottom: 6px;
-    font-weight: bolder;
-    font-size: larger;
+    font-weight: bold;
+    font-size: 24px;
   }
 
   .modal-content {
@@ -114,6 +114,14 @@
     border-radius: 5px;
   } 
 
+  .signout:hover {
+    cursor: pointer;
+  }
+
+  .signin:hover {
+    cursor: pointer;
+  }
+
   .signinform {
     width: 400px;
   }
@@ -123,6 +131,5 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: center;
   }
