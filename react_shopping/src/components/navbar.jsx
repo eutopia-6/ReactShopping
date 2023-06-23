@@ -18,13 +18,38 @@ export const Navbar = () => {
   const handleSignOutClose = () => {setSignOutOpen(false)};
   const handleRegisterOpen = () => {setIsRegisterOpen(true)};
   const handleRegisterClose = () => {setIsRegisterOpen(false)};
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
 
+  const handleRegSubmit = () => {
+
+    const userInfo = {
+      name: name,
+      password: password
+    }
+
+    fetch('/user', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userInfo)
+    }).catch((error) => {
+      console.error(error);})
+
+  }
 
   const getUser = (credentialResponse) => {
     var userObject = jwt_decode(credentialResponse);
     setUser(userObject);
     console.log(userObject);
     document.getElementById("user").hidden = true;
+  }
+
+  const closeRegister = () => {
+    const form = document.getElementById('register-form');
+    form.submit();
+    handleRegisterClose();
   }
 
   const userLogOut = () => {
@@ -119,20 +144,30 @@ export const Navbar = () => {
         onRequestClose={handleRegisterClose} 
         shouldCloseOnOverlayClick={true}>
           <div className='modal-content-register'>
-            <form className='signinform'>
+            <form 
+            id='register-form'
+            className='registerform'
+            onSubmit={handleRegSubmit}>
                 <input 
                 className='usernameBox' 
                 type="username"
-                placeholder='Username'/>
+                placeholder='Username'
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required/>
 
                 <input 
                 className='passwordBox' 
                 type="password"
-                placeholder='Password'/>
+                placeholder='Password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required/>
                 
                 <button 
-                className='signin' 
-                type='submit'>
+                className='register' 
+                type='submit'
+                onClick={closeRegister}>
                 Register</button>
               </form>
               </div>

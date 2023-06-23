@@ -7,6 +7,7 @@ import { ShopContextProvider } from "./context/shop-context"
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import './App.css';
 import '../src/components/navbar.css'
+import { TestForm } from "./components/testform";
 
 
 function App() {

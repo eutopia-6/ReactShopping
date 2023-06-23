@@ -106,6 +106,16 @@
     font-size: 15px;
   } 
 
+  .register {
+    width: 400px;
+    height: 40px;
+    margin-top: 10px;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 15px;
+  } 
+
   .signout {
     width: 400px;
     height: 40px;
@@ -158,4 +168,20 @@
     justify-content:space-around;
     text-align: center;
     height: 100%;
+  }
+
+  .registerform .links {
+    display: flex;
+    width: 400px;
+    justify-content: flex-end;
+    align-items:flex-end;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    margin-top: 5px;
+  
+  }
+
+  .registerform .links:hover {
+    cursor: pointer;
   }
