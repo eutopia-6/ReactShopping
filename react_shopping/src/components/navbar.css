@@ -20,7 +20,7 @@
     align-items: center;
   }
 
-  .user {
+  #user {
     margin-top: 2px;
     margin-right: 10px;
     float: left;
@@ -58,12 +58,34 @@
     opacity: 0;
 }
 
-  #signInDiv {
-    margin-left: 20px;
+  .googleIcon {
     margin-bottom: 3px;
+    padding-top: 10px;
   }
 
   .username {
     color: white;
     margin-left: 20px;
+    margin-bottom: 6px;
+    font-weight: bolder;
+    font-size: larger;
+  }
+
+  .modal-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+  }
+
+  .usernameBox{
+    width: 100%;
+    height: 25px;
+  }
+
+  .passwordBox{
+    width: 100%;
+    height: 25px;
   }

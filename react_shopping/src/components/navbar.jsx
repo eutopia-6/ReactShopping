@@ -4,37 +4,25 @@ import { ShoppingCart, UserCircle } from "phosphor-react";
 import { useState, useEffect } from 'react';
 import "./navbar.css";
 import Modal from 'react-modal';
+import { GoogleLogin, useGoogleLogin } from '@react-oauth/google';
 import jwt_decode from "jwt-decode";
+
 
 export const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [user, setUser ] = useState({});
+  const [user, setUser] = useState(0);
   const handleModalOpen = () => {setIsModalOpen(true);};
   const handleModalClose = () => {setIsModalOpen(false)};
+  const login = useGoogleLogin({
+    onSuccess: tokenResponse => console.log(tokenResponse),
+  });
 
-  const isUserEmpty = () => {
-    return Object.keys(user).length === 0;
-  };
-
-  const handCallbackResponse = (response) => {
-    console.log("Encoded JWT ID token: " + response.credential);
-    var userObject = jwt_decode(response.credential);
-    console.log(userObject);
+  const getUser = (credentialResponse) => {
+    var userObject = jwt_decode(credentialResponse);
     setUser(userObject);
-    document.getElementById("signInDiv").hidden = true;
- }
-  
-  useEffect(() => {
-    /* global google */
-    google.accounts.id.initialize({
-      client_id: "97815386692-82ttib8dqglele56ndmsf9t0c1l17uii.apps.googleusercontent.com",
-      callback: handCallbackResponse
-    });
-    google.accounts.id.renderButton(
-      document.getElementById("signInDiv"),
-      { theme: "filled_white", size: "medium", shape: "square", type: "icon"}
-    );
-  }, []);
+    console.log(userObject);
+    document.getElementById("user").hidden = true;
+  }
 
   return (
     <div className="navbar">
@@ -45,9 +33,8 @@ export const Navbar = () => {
             <Link to="/cart">
                 <ShoppingCart size={40}/>
             </Link>
-            <div id="signInDiv"/>
-            {!(isUserEmpty()) &&  <h4 className='username'>{user.name}</h4>}
-            <div className="user">
+            {!(user === 0) && <div className='username'>{user.name}</div>}
+            <div id="user">
               <Link onClick={handleModalOpen}>
                 <UserCircle size={40} color='white'/>
               </Link>
@@ -58,20 +45,30 @@ export const Navbar = () => {
         isOpen={isModalOpen} 
         onRequestClose={handleModalClose} 
         shouldCloseOnOverlayClick={true}>
-          <div>
-            <div>
-            <b>Username</b>
-            </div>
-            <input type="username"/>
-          </div>
+          <div className='modal-content'>
+              <input 
+              className='usernameBox' 
+              type="username"
+              placeholder='Username'/>
 
-          <div>
-            <div>
-              <b>Password</b>
+              <input 
+              className='passwordBox' 
+              type="password"
+              placeholder='Password'/>
+            <button type='submit'>Sign In</button>
+            <p>or you can sign in with</p>
+            <div className='googleIcon'>
+              <GoogleLogin
+              onSuccess={credentialResponse => {
+                getUser(credentialResponse.credential);
+              }}
+              onError={() => {
+                console.log('Login Failed');
+              }}
+              type='icon'
+              shape='circle'/>
             </div>
-          <input type="password"/>
           </div>
-          <br/>
         </Modal>
     </div>
   )
