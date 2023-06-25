@@ -1,23 +1,27 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import { ShoppingCart, UserCircle } from 'phosphor-react';
+import { ShoppingCart, UserCircle, Hamburger, Star } from 'phosphor-react';
 import { useState, useEffect } from 'react';
 import "./navbar.css";
 import Modal from 'react-modal';
 import { GoogleLogin } from '@react-oauth/google';
 import jwt_decode from 'jwt-decode';
+import { slide as Menu } from 'react-burger-menu'
 
 export const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSignOutOpen, setSignOutOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const [user, setUser] = useState(0);
   const handleModalOpen = () => {setIsModalOpen(true);};
-  const handleModalClose = () => {setIsModalOpen(false)};
-  const handleSignOutOpen = () => {setSignOutOpen(true)};
-  const handleSignOutClose = () => {setSignOutOpen(false)};
-  const handleRegisterOpen = () => {setIsRegisterOpen(true)};
-  const handleRegisterClose = () => {setIsRegisterOpen(false)};
+  const handleModalClose = () => {setIsModalOpen(false);};
+  const handleSignOutOpen = () => {setSignOutOpen(true);};
+  const handleSignOutClose = () => {setSignOutOpen(false);};
+  const handleRegisterOpen = () => {setIsRegisterOpen(true);};
+  const handleRegisterClose = () => {setIsRegisterOpen(false);};
+  const handleBurgerOpen = () => {setIsBurgerOpen(true);};
+  const handleBurgerClose = () => {setIsBurgerOpen(false);};
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
@@ -64,13 +68,24 @@ export const Navbar = () => {
   }
 
   return (
-    <div className="navbar">
+    <div>
+       <Menu 
+        onOpen={isBurgerOpen} 
+        customBurgerIcon={<Hamburger className='burger' size={40} color='white'/>}>
+          <Link className='favoritelink'>
+          <Star color='black' size={20}/> 
+          <p>Favorites</p>
+          </Link>
+        </Menu>
+      <div className="navbar">
+        <Link onClick={handleBurgerOpen}>
+        </Link>
         <div className="links">
             <div className="shop">
               <Link to="/"><b>Shop</b></Link>
             </div>
             <Link to="/cart">
-                <ShoppingCart size={40}/>
+                <ShoppingCart size={40} className='shoppingcart'/>
             </Link>
               {!(user === 0) && 
             <Link onClick={handleSignOutOpen}>
@@ -173,5 +188,6 @@ export const Navbar = () => {
               </div>
         </Modal>
     </div>
+  </div>
   )
 }

@@ -1,187 +1,251 @@
 .navbar {
-    width: 100%;
-    height: 80px;
-    background-color: rgb(19, 19, 19);
-    display: flex;
-    justify-content: flex-end; 
-    align-items: center;
-  }
-  
-  .links {
-    margin-right: 30px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .links .shop {
-    margin-right: 3px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-  }
-
-  #user {
-    margin-top: 2px;
-    margin-right: 10px;
-    float: left;
-    color: white;
-  }
-
-  .links a {
-    text-decoration: none;
-    color: white;
-    margin-left: 20px;
-    font-size: 25px;
-  }
-
-  .ReactModal__Overlay {
-    opacity: 0;
-    transition: opacity 1000ms ease-in-out;
-    
-  }
-  
-  .ReactModal__Content {
-    width: 400px;
-    height: 395px;
-    margin: auto;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 20px;
-    background-color: #fff;
-  }
-
-  .ReactModal__Overlay--after-open{
-    opacity: 1;
+  width: 100%;
+  height: 80px;
+  background-color: rgb(19, 19, 19);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-  .ReactModal__Overlay--before-close{
-    opacity: 0;
+.links {
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
 }
 
-  .googleIcon {
-    padding-top: 10px;
-  }
+.links .shop {
+  margin-right: 3px;
+  margin-bottom: 7px;
+  display: flex;
+  align-items: center;
+}
 
-  .username {
-    color: white;
-    margin-left: 5px;
-    margin-bottom: 6px;
-    font-weight: bold;
-    font-size: 24px;
-  }
+#user {
+  margin-top: 2px;
+  float: left;
+  color: white;
+}
 
-  .modal-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
-  }
+.links a {
+  text-decoration: none;
+  color: white;
+  margin-left: 20px;
+  font-size: 25px;
+}
 
-  .usernameBox {
-    width: 390px;
-    height: 40px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    font-size: 15px;
-    border-radius: 5px;
-  }
+.shoppingcart {
+  margin-left: 2px;
+}
 
-  .passwordBox {
-    width: 390px;
-    height: 40px;
-    margin-bottom: 20px;
-    font-size: 15px;
-    border-radius: 5px;
-  }
-
-  .signin {
-    width: 400px;
-    height: 40px;
-    margin-top: 10px;
-    color: white;
-    background-color: black;
-    border-radius: 5px;
-    font-size: 15px;
-  } 
-
-  .register {
-    width: 400px;
-    height: 40px;
-    margin-top: 10px;
-    color: white;
-    background-color: black;
-    border-radius: 5px;
-    font-size: 15px;
-  } 
-
-  .signout {
-    width: 400px;
-    height: 40px;
-    margin-top: 10px;
-    color: white;
-    background-color: black;
-    border-radius: 5px;
-  } 
-
-  .signout:hover {
-    cursor: pointer;
-  }
-
-  .signin:hover {
-    cursor: pointer;
-  }
-
-  .signinform {
-    width: 400px;
-  }
-
-  .signout-modal {
-    height: 90%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .signinform .links {
-    display: flex;
-    width: 400px;
-    justify-content: flex-end;
-    align-items:flex-end;
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
-    margin-top: 5px;
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
   
-  }
+}
 
-  .signinform .links:hover {
-    cursor: pointer;
-  }
+.ReactModal__Content {
+  width: 400px;
+  height: 395px;
+  margin: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  background-color: #fff;
+}
 
-  .modal-content-register {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:space-around;
-    text-align: center;
-    height: 100%;
-  }
+.ReactModal__Overlay--after-open{
+  opacity: 1;
+}
 
-  .registerform .links {
-    display: flex;
-    width: 400px;
-    justify-content: flex-end;
-    align-items:flex-end;
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
-    margin-top: 5px;
-  
-  }
+.ReactModal__Overlay--before-close{
+  opacity: 0;
+}
 
-  .registerform .links:hover {
-    cursor: pointer;
-  }
+.googleIcon {
+  padding-top: 10px;
+}
+
+.username {
+  color: white;
+  margin-left: 5px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.usernameBox {
+  width: 390px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.passwordBox {
+  width: 390px;
+  height: 40px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.signin {
+  width: 400px;
+  height: 40px;
+  margin-top: 10px;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  font-size: 15px;
+} 
+
+.register {
+  width: 400px;
+  height: 40px;
+  margin-top: 10px;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  font-size: 15px;
+} 
+
+.signout {
+  width: 400px;
+  height: 40px;
+  margin-top: 10px;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+} 
+
+.signout:hover {
+  cursor: pointer;
+}
+
+.signin:hover {
+  cursor: pointer;
+}
+
+.signinform {
+  width: 400px;
+}
+
+.signout-modal {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signinform .links {
+  display: flex;
+  width: 400px;
+  justify-content: flex-end;
+  align-items:flex-end;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  margin-top: 5px;
+
+}
+
+.signinform .links:hover {
+  cursor: pointer;
+}
+
+.modal-content-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-around;
+  text-align: center;
+  height: 100%;
+}
+
+.registerform .links {
+  display: flex;
+  width: 400px;
+  justify-content: flex-end;
+  align-items:flex-end;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  margin-top: 5px;
+
+}
+
+.registerform .links:hover {
+  cursor: pointer;
+}
+
+.bm-burger-button {
+  position: absolute;
+  margin-top: 17px;
+  margin-left: 15px;
+}
+
+.bm-burger-bars {
+  background: #373a47;
+}
+
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: black;
+}
+
+.bm-menu {
+  background: white;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  overflow: hidden !important;
+}
+
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+.bm-item-list {
+  color: black;
+  padding: 0.8em;
+}
+
+.bm-item {
+  display: inline-block;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.favoritelink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.favoritelink p {
+  display: inline;
+  margin-left: 5px;
+  font-size: 25px;
+}
