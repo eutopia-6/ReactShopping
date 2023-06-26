@@ -20,8 +20,6 @@ export const Navbar = () => {
   const handleSignOutClose = () => {setSignOutOpen(false);};
   const handleRegisterOpen = () => {setIsRegisterOpen(true);};
   const handleRegisterClose = () => {setIsRegisterOpen(false);};
-  const handleBurgerOpen = () => {setIsBurgerOpen(true);};
-  const handleBurgerClose = () => {setIsBurgerOpen(false);};
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
@@ -46,7 +44,6 @@ export const Navbar = () => {
   const getUser = (credentialResponse) => {
     var userObject = jwt_decode(credentialResponse);
     setUser(userObject);
-    console.log(userObject);
     document.getElementById("user").hidden = true;
   }
 
@@ -70,16 +67,13 @@ export const Navbar = () => {
   return (
     <div>
        <Menu 
-        onOpen={isBurgerOpen} 
         customBurgerIcon={<Hamburger className='burger' size={40} color='white'/>}>
-          <Link className='favoritelink'>
+          <Link to="/favorites" className='favoritelink'>
           <Star color='black' size={20}/> 
           <p>Favorites</p>
           </Link>
         </Menu>
       <div className="navbar">
-        <Link onClick={handleBurgerOpen}>
-        </Link>
         <div className="links">
             <div className="shop">
               <Link to="/"><b>Shop</b></Link>

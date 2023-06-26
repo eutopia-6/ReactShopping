@@ -3,8 +3,9 @@ import {ShopContext} from "../../context/shop-context";
 
 export const Product = (props) => {
     const { id, title:productName, price, image:productImage } = props.data;
-    const { addToCart, cartItems } = useContext(ShopContext);
+    const { addToCart, cartItems, addToFavorites, favoriteItems } = useContext(ShopContext);
     const cartItemAmount = cartItems[id];
+    const favorited = favoriteItems[id];
     
   return (
     <div className="product">
@@ -24,6 +25,13 @@ export const Product = (props) => {
                 ({cartItemAmount})
                 </>}
         </button>
+        {favorited === 1 ? 
+        <button className="favoriteBttn" onClick={() => addToFavorites(id)}>
+            Un-favorite
+        </button> :
+        <button className="favoriteBttn" onClick={() => addToFavorites(id)}>
+            Favorite
+        </button> }
     </div>
   )
 }

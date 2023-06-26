@@ -11,14 +11,22 @@ const getDefaultCart = () => {
     return cart;
 };
 
+const getDefaultFavorite = () => {
+    let cart = {};
+    for (let i = 1; i < 25; i++){
+        cart[i] = 0;
+    }
+    return cart;
+};
+
 export const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState(getDefaultCart());
+    const [favoriteItems, setFavoriteItems] = useState(getDefaultFavorite());
     const [productList, SetProductList] = useState([]);
 
     const GetProducts = async () => {
         const temp = await fetch('https://fakestoreapi.com/products')
         .then(res=>res.json())
-        console.log(temp);
 
         SetProductList(temp)
     }
@@ -51,12 +59,20 @@ export const ShopContextProvider = (props) => {
         setCartItems((prev) => ({...prev, [itemId] : newAmount}));
     }
 
+    const addToFavorites = (itemId) => {
+        setFavoriteItems((prev) => (
+            {...prev, 
+            [itemId] : prev[itemId] === 1 ? prev[itemId] - 1 : prev[itemId] + 1}))}
+
     const contextValue = {
         cartItems, 
         addToCart, 
         removeFromCart,
         updateCartItemCount,
         getTotalCartAmount,
+        productList,
+        addToFavorites,
+        favoriteItems,
     };
 
   return (

@@ -1,23 +1,11 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Product } from "./product";
 import "./shop.css";
+import { ShopContext } from '../../context/shop-context';
 
 
 export const Shop = () => {
-  const [productList, SetProductList] = useState([]);
-
-  const GetProducts = async () => {
-    const temp = await fetch('https://fakestoreapi.com/products')
-    .then(res=>res.json())
-    console.log(temp);
-
-    SetProductList(temp)
-  }
-
-  useEffect(() => {
-    GetProducts();
-  }, [])
+  const {productList} = useContext(ShopContext);
 
   return (
     <div className="shop">

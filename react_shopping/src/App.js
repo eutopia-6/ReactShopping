@@ -5,6 +5,7 @@ import { Cart } from "./pages/cart/cart";
 import { Notready } from './pages/notready/notready';
 import { ShopContextProvider } from "./context/shop-context"
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import { Favorites } from "./pages/favorites/favorites";
 import './App.css';
 import '../src/components/navbar.css'
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={ <Shop/> }/>
             <Route path="/cart" element={ <Cart/> }/>
             <Route path="/staytuned" element={ <Notready/> }/>
+            <Route path="/favorites" element={ <Favorites/> }/>
           </Routes>
         </Router>
         </ShopContextProvider>
