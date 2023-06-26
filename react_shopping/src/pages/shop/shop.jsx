@@ -5,7 +5,18 @@ import { ShopContext } from '../../context/shop-context';
 
 
 export const Shop = () => {
-  const {productList} = useContext(ShopContext);
+  const [productList, SetProductList] = useState([]);
+
+    const GetProducts = async () => {
+        const temp = await fetch('https://fakestoreapi.com/products')
+        .then(res=>res.json())
+
+        SetProductList(temp)
+    }
+
+    useEffect(() => {
+        GetProducts();
+    }, [])
 
   return (
     <div className="shop">
