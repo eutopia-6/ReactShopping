@@ -1,8 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Product } from "./product";
 import "./shop.css";
-import { ShopContext } from '../../context/shop-context';
-
 
 export const Shop = () => {
   const [productList, SetProductList] = useState([]);
@@ -12,6 +10,7 @@ export const Shop = () => {
         .then(res=>res.json())
 
         SetProductList(temp)
+        
     }
 
     useEffect(() => {

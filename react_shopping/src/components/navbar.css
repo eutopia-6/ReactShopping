@@ -193,6 +193,8 @@
   position: absolute;
   margin-top: 17px;
   margin-left: 15px;
+  width: 50px;
+  height: 45px;
 }
 
 .bm-burger-bars {
