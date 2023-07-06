@@ -26,6 +26,10 @@ def home():
         return jsonify(response)
     else:
         return "Blank"
+    
+@app.route('/')
+def default():
+    return "Hello World"
 
 if __name__ == "__main__":
     db.create_all()
