@@ -10,7 +10,7 @@ export const TestFormPost = () => {
             email: email
         }
 
-        fetch('https://react-shopping-flask.vercel.app/user', {
+        fetch('/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

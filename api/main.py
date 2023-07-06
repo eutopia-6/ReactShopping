@@ -8,21 +8,21 @@ db = SQLAlchemy(app)
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
-    password = db.Column(db.String(100))
+    email = db.Column(db.String(100))
 
 
 @app.route('/user', methods=['POST', 'GET'])
 def home():
     if request.method == 'POST':
         name = request.json.get('name')
-        password = request.json.get('email')
-        new_user = User(name=name, password=password)
+        email = request.json.get('email')
+        new_user = User(name=name, email=email)
 
         db.session.add(new_user)
         db.session.commit()
     elif request.method =='GET':
         data = User.query.all()
-        response = [{'name': item.name, 'password':item.password} for item in data]
+        response = [{'name': item.name, 'email':item.email} for item in data]
         return jsonify(response)
     else:
         return "Blank"
