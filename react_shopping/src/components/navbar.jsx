@@ -7,6 +7,7 @@ import Modal from 'react-modal';
 import { GoogleLogin } from '@react-oauth/google';
 import jwt_decode from 'jwt-decode';
 import { slide as Menu } from 'react-burger-menu'
+import { TestFormPost } from './testformpost';
 
 export const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -182,6 +183,7 @@ export const Navbar = () => {
               </div>
         </Modal>
     </div>
+      <TestFormPost/>
   </div>
   )
 }
