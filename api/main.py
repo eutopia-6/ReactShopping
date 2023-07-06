@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://default:PwgKlWk2dtB9@ep-empty-mud-995772.us-east-1.postgres.vercel-storage.com:5432/verceldb'
+#'sqlite:///accounts.db'
 db = SQLAlchemy(app)
 
 class User(db.Model):
