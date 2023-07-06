@@ -15,7 +15,7 @@ class User(db.Model):
 def home():
     if request.method == 'POST':
         name = request.json.get('name')
-        password = request.json.get('password')
+        password = request.json.get('email')
         new_user = User(name=name, password=password)
 
         db.session.add(new_user)
