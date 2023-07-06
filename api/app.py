@@ -2,7 +2,7 @@ from flask import Flask, redirect, url_for, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///accounts.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://default:PwgKlWk2dtB9@ep-empty-mud-995772.us-east-1.postgres.vercel-storage.com:5432/verceldb'
 db = SQLAlchemy(app)
 
 class User(db.Model):
