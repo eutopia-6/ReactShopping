@@ -6,7 +6,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://default:PwgKlWk2dtB9@ep-em
 db = SQLAlchemy(app)
 
 class User(db.Model):
-    __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
     password = db.Column(db.String(100))
