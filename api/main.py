@@ -30,6 +30,7 @@ def home():
     
 @app.route('/')
 def default():
+    print("Hellos World")
     return "Hellos World"
 
 if __name__ == "__main__":
