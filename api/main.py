@@ -21,6 +21,7 @@ def home():
 
         db.session.add(new_user)
         db.session.commit()
+        print("Debugging")
         return "Blank1"
     elif request.method =='GET':
         return "Blank2"
