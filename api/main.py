@@ -14,7 +14,7 @@ class User(db.Model):
     name = db.Column(db.String(100))
     email = db.Column(db.String(100))
 
-@app.route('/user', methods=['POST', 'GET'])
+@app.route('/user/', methods=['POST', 'GET'])
 def home():
     if request.method == 'POST':
         name = request.json.get('name')
