@@ -47,8 +47,7 @@ export const Navbar = () => {
     document.getElementById("user").hidden = true;
   }
 
-  const closeRegister = (e) => {
-    e.preventDefault();
+  const closeRegister = () => {
     const form = document.getElementById('register-form');
     form.submit();
     handleRegisterClose();
@@ -177,7 +176,7 @@ export const Navbar = () => {
                 <button 
                 className='register' 
                 type='submit'
-                onClick={(e) => closeRegister(e)}>
+                onClick={closeRegister}>
                 Register</button>
               </form>
               </div>
