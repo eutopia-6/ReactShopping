@@ -21,11 +21,11 @@ def home():
 
         db.session.add(new_user)
         db.session.commit()
-        return "Blank"
+        return "Blank1"
     elif request.method =='GET':
-        return "Blank"
+        return "Blank2"
     else:
-        return "Blank"
+        return "Blank3"
     
 @app.route('/')
 def default():
