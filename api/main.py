@@ -21,10 +21,9 @@ def home():
 
         db.session.add(new_user)
         db.session.commit()
+        return "Blank"
     elif request.method =='GET':
-        data = User.query.all()
-        response = [{'name': item.name, 'email':item.email} for item in data]
-        return jsonify(response)
+        return "Blank"
     else:
         return "Blank"
     
