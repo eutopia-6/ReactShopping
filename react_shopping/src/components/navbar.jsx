@@ -24,7 +24,6 @@ export const Navbar = () => {
   const [password, setPassword] = useState('');
 
   const handleRegSubmit = (e) => {
-    console.log("Submitted");
     e.preventDefault();
     const userInfo = {
       name: name,
@@ -51,7 +50,6 @@ export const Navbar = () => {
 
   const closeRegister = () => {
     const form = document.getElementById('register-form');
-    form.submit();
     handleRegisterClose();
   }
 
