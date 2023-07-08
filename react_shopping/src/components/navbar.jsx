@@ -39,8 +39,6 @@ export const Navbar = () => {
       body: JSON.stringify(userInfo)
     }).catch((error) => {
       console.error(error);})
-      console.log(name);
-      console.log(password);
   }
   
   const getUser = (credentialResponse) => {
@@ -49,7 +47,8 @@ export const Navbar = () => {
     document.getElementById("user").hidden = true;
   }
 
-  const closeRegister = () => {
+  const closeRegister = (e) => {
+    e.preventDefault();
     const form = document.getElementById('register-form');
     form.submit();
     handleRegisterClose();
