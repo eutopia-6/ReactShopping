@@ -39,6 +39,8 @@ export const Navbar = () => {
       body: JSON.stringify(userInfo)
     }).catch((error) => {
       console.error(error);})
+      
+      closeRegister();
   }
   
   const getUser = (credentialResponse) => {
@@ -175,8 +177,7 @@ export const Navbar = () => {
                 
                 <button 
                 className='register' 
-                type='submit'
-                onClick={closeRegister}>
+                type='submit'>
                 Register</button>
               </form>
               </div>
