@@ -8,18 +8,11 @@
   "routes": [
     {
       "src": "/user",
-      "dest": "https://react-shopping-flask.vercel.app/user",
-      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE"]
+      "dest": "https://react-shopping-flask.vercel.app/user"
     },
     {
       "src": "/",
       "dest": "/main.py"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/user",
-      "destination": "https://react-shopping-flask.vercel.app/user"
     }
   ]
 }
