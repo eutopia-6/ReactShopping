@@ -24,6 +24,7 @@ export const Navbar = () => {
   const [password, setPassword] = useState('');
 
   const handleRegSubmit = (e) => {
+    console.log("Submitted");
     e.preventDefault();
     const userInfo = {
       name: name,
@@ -38,9 +39,10 @@ export const Navbar = () => {
       body: JSON.stringify(userInfo)
     }).catch((error) => {
       console.error(error);})
-
+      console.log(name);
+      console.log(password);
   }
-
+  
   const getUser = (credentialResponse) => {
     var userObject = jwt_decode(credentialResponse);
     setUser(userObject);
