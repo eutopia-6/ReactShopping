@@ -24,7 +24,7 @@ export const Navbar = () => {
   const [password, setPassword] = useState('');
 
   const handleRegSubmit = (e) => {
-    e.preventsDefault();
+    e.preventDefault();
     const userInfo = {
       name: name,
       password: password
