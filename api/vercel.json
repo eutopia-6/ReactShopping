@@ -18,8 +18,8 @@
   ],
   "rewrites": [
     {
-      "src": "/user",
-      "dest": "https://react-shopping-flask.vercel.app/user"
+      "source": "/user",
+      "destination": "https://react-shopping-flask.vercel.app/user"
     }
   ]
 }
