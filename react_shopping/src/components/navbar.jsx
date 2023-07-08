@@ -182,7 +182,6 @@ export const Navbar = () => {
               </div>
         </Modal>
     </div>
-      <TestFormPost/>
   </div>
   )
 }
