@@ -177,7 +177,7 @@ export const Navbar = () => {
                 <button 
                 className='register' 
                 type='submit'
-                onClick={closeRegister}>
+                onClick={(e) => closeRegister(e)}>
                 Register</button>
               </form>
               </div>
