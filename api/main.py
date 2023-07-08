@@ -1,7 +1,9 @@
 from flask import Flask, redirect, url_for, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://default:PwgKlWk2dtB9@ep-empty-mud-995772-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb"
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///accounts.db'
 db = SQLAlchemy(app)
