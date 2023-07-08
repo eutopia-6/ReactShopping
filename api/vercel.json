@@ -11,8 +11,8 @@
       "dest": "https://react-shopping-flask.vercel.app/user"
     },
     {
-      "src": "/",
-      "dest": "/main.py"
+      "src": "/(.*)",
+      "dest": "main.py"
     }
   ]
 }

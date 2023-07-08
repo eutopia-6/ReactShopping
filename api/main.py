@@ -26,9 +26,7 @@ def home():
         print("Posted")
         return "Blank1"
     elif request.method =='GET':
-        data = User.query.all()
-        response = [{'name': item.name, 'email':item.email} for item in data]
-        return jsonify(response)
+        return "Blank2"
     else:
         return "Blank3"
     
