@@ -15,5 +15,11 @@
       "src": "/",
       "dest": "/main.py"
     }
+  ],
+  "rewrites": [
+    {
+      "src": "/user",
+      "dest": "https://react-shopping-flask.vercel.app/user"
+    }
   ]
 }
