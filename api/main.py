@@ -21,16 +21,17 @@ def home():
 
         db.session.add(new_user)
         db.session.commit()
-        print("Debugging")
+        print("Posted")
         return "Blank1"
     elif request.method =='GET':
-        return "Blank2"
+        data = User.query.all()
+        response = [{'name': item.name, 'email':item.email} for item in data]
+        return jsonify(response)
     else:
         return "Blank3"
     
 @app.route('/')
 def default():
-    print("Hellos World")
     return "Hellos World"
 
 if __name__ == "__main__":
