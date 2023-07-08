@@ -13,7 +13,6 @@ export const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSignOutOpen, setSignOutOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
-  const [isBurgerOpen, setIsBurgerOpen] = useState(false);
   const [user, setUser] = useState(0);
   const handleModalOpen = () => {setIsModalOpen(true);};
   const handleModalClose = () => {setIsModalOpen(false);};
@@ -24,14 +23,14 @@ export const Navbar = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleRegSubmit = () => {
-
+  const handleRegSubmit = (e) => {
+    e.preventsDefault();
     const userInfo = {
       name: name,
       password: password
     }
 
-    fetch('/user', {
+    fetch('https://react-shopping-flask.vercel.app/user/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

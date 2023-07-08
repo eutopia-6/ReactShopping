@@ -6,7 +6,6 @@ export const TestFormPost = () => {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      console.log("Hello Hi");
         const formData = {
             name: name,
             email: email
