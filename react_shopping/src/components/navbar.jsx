@@ -7,13 +7,13 @@ import Modal from 'react-modal';
 import { GoogleLogin } from '@react-oauth/google';
 import jwt_decode from 'jwt-decode';
 import { slide as Menu } from 'react-burger-menu'
-import { TestFormPost } from './testformpost';
 
 export const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSignOutOpen, setSignOutOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [user, setUser] = useState(0);
+  const [currentUser, setCurrentUser] = useState(0);
   const handleModalOpen = () => {setIsModalOpen(true);};
   const handleModalClose = () => {setIsModalOpen(false);};
   const handleSignOutOpen = () => {setSignOutOpen(true);};
@@ -40,6 +40,10 @@ export const Navbar = () => {
       console.error(error);})
       
       closeRegister();
+      setCurrentUser(name);
+      setName('');
+      setPassword('');
+      console.log(currentUser);
   }
   
   const getUser = (credentialResponse) => {
