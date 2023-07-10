@@ -43,7 +43,6 @@ export const Navbar = () => {
       setCurrentUser(name);
       setName('');
       setPassword('');
-      console.log(currentUser);
   }
   
   const getUser = (credentialResponse) => {
