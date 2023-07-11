@@ -12,7 +12,7 @@
     place-items: center;
   }
   
-  @media screen and (max-width: none) {
+  @media screen {
     .products {
       grid-template-columns: 1fr;
     }
