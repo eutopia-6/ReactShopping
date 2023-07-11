@@ -252,3 +252,14 @@
   margin-left: 5px;
   font-size: 25px;
 }
+@media screen and (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+  }
+  .links {
+    margin-right: 10px;
+  }
+  .links a {
+    margin-left: 10px;
+  }
+}
