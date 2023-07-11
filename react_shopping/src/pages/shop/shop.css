@@ -11,12 +11,6 @@
     grid-template-columns: 1fr 1fr 1fr;
     place-items: center;
   }
-  
-  @media screen and (min-width: 320px){
-    .products {
-      grid-template-columns: 1fr;
-    }
-  }
 
   .product {
     border-radius: 15px;
