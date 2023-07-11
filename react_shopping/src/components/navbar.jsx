@@ -61,6 +61,7 @@ export const Navbar = () => {
 
   const userLogOut = () => {
     setUser(0);
+    setCurrentUser(0);
     handleSignOutClose();
     document.getElementById("user").hidden = false;
     if(googleUser){
