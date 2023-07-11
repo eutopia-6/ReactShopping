@@ -13,6 +13,7 @@ export const Navbar = () => {
   const [isSignOutOpen, setSignOutOpen] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [user, setUser] = useState(0);
+  const [googleUser, setGoogleUser] = useState(false);
   const [currentUser, setCurrentUser] = useState(0);
   const handleModalOpen = () => {setIsModalOpen(true);};
   const handleModalClose = () => {setIsModalOpen(false);};
@@ -43,12 +44,14 @@ export const Navbar = () => {
       setCurrentUser(name);
       setName('');
       setPassword('');
+      document.getElementById("user").hidden = true;
   }
   
   const getUser = (credentialResponse) => {
     var userObject = jwt_decode(credentialResponse);
     setUser(userObject);
     document.getElementById("user").hidden = true;
+    setGoogleUser(true);
   }
 
   const closeRegister = () => {
@@ -60,6 +63,9 @@ export const Navbar = () => {
     setUser(0);
     handleSignOutClose();
     document.getElementById("user").hidden = false;
+    if(googleUser){
+      setGoogleUser(false);
+    }
   }
 
   const openRegister = () => {
@@ -88,6 +94,12 @@ export const Navbar = () => {
             <Link onClick={handleSignOutOpen}>
               <div className='username'>
                 {user.name}
+              </div>
+            </Link>}
+              {!(currentUser === 0) && (googleUser === false) && 
+            <Link onClick={handleSignOutOpen}>
+              <div className='username'>
+                {currentUser}
               </div>
             </Link>}
             <div id="user">
