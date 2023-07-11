@@ -12,6 +12,12 @@
     place-items: center;
   }
   
+  @media screen and (max-width: none) {
+    .products {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .product {
     border-radius: 15px;
     width: 250px;
