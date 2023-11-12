@@ -15,15 +15,15 @@ export const Navbar = () => {
   const [user, setUser] = useState(0);
   const [googleUser, setGoogleUser] = useState(false);
   const [currentUser, setCurrentUser] = useState(0);
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+
   const handleModalOpen = () => {setIsModalOpen(true);};
   const handleModalClose = () => {setIsModalOpen(false);};
   const handleSignOutOpen = () => {setSignOutOpen(true);};
   const handleSignOutClose = () => {setSignOutOpen(false);};
   const handleRegisterOpen = () => {setIsRegisterOpen(true);};
   const handleRegisterClose = () => {setIsRegisterOpen(false);};
-  const [name, setName] = useState('');
-  const [password, setPassword] = useState('');
-
   const handleRegSubmit = (e) => {
     e.preventDefault();
     const userInfo = {

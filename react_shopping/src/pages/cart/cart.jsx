@@ -28,8 +28,8 @@ export const Cart = () => {
               <Link to="/">
                 <button>Continue Shopping</button>
               </Link>
-              <Link to="/staytuned">
-                <button>Checkout</button>
+              <Link to="/checkout">
+                <button>CheckoutForm</button>
               </Link>
             </div>)
           }
