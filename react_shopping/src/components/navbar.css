@@ -1,7 +1,11 @@
+.navbar-width {
+
+}
+
 .navbar {
-  width: 100%;
+  width: auto;
   height: 80px;
-  background-color: rgb(19, 19, 19);
+  background-color: #131313;
   display: flex;
   align-items: center;
   justify-content: end;

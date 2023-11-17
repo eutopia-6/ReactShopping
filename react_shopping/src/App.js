@@ -11,21 +11,21 @@ import '../src/components/navbar.css'
 
 function App() {
   return (
-    <div className="App">
-      <GoogleOAuthProvider clientId='97815386692-82ttib8dqglele56ndmsf9t0c1l17uii.apps.googleusercontent.com'>
-        <ShopContextProvider>
-        <Router>
-          <Navbar/>
-          <Routes>
-            <Route path="/" element={ <Shop/> }/>
-            <Route path="/cart" element={ <Cart/> }/>
-            <Route path="/checkout" element={ <CheckoutForm/> }/>
-            <Route path="/favorites" element={ <Favorites/> }/>
-          </Routes>
-        </Router>
-        </ShopContextProvider>
-      </GoogleOAuthProvider>
-    </div>
+      <div className="App">
+        <GoogleOAuthProvider clientId='97815386692-82ttib8dqglele56ndmsf9t0c1l17uii.apps.googleusercontent.com'>
+          <ShopContextProvider>
+          <Router>
+            <Navbar/>
+            <Routes>
+              <Route path="/" element={ <Shop/> }/>
+              <Route path="/cart" element={ <Cart/> }/>
+              <Route path="/checkout" element={ <CheckoutForm/> }/>
+              <Route path="/favorites" element={ <Favorites/> }/>
+            </Routes>
+          </Router>
+          </ShopContextProvider>
+        </GoogleOAuthProvider>
+      </div>
   );
 }
 

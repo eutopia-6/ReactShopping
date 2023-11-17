@@ -75,7 +75,7 @@ export const Navbar = () => {
   }
 
   return (
-    <div>
+    <div className='navbar-width'>
        <Menu 
         customBurgerIcon={<Hamburger className='burger' size={40} color='white'/>}>
           <Link to="/favorites" className='favoritelink'>
