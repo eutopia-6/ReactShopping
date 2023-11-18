@@ -1,13 +1,14 @@
-.App {
+.App-Box {
   width: 100%;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
 
 html, body {
-    padding: 0px;
-    margin: 0px;
-    overflow-x: hidden;
-  }
+  width: 100vw;
+  padding: 0px;
+  margin: 0px;
+  overflow-x: hidden;
+}
 
 .FormGroup {
   margin: 0 15px 20px;
