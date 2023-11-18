@@ -29,7 +29,7 @@ export const Cart = () => {
                 <button>Continue Shopping</button>
               </Link>
               <Link to="/checkout">
-                <button>CheckoutForm</button>
+                <button>Checkout</button>
               </Link>
             </div>)
           }
