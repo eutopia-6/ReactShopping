@@ -49,14 +49,16 @@
   }
   
   .addToCartBttn {
-    background-color: transparent;
+    background-color: black;
+    color: white;
     border: 2px solid rgb(19, 19, 19);
     min-width: 100px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    border-radius: 15px;
+    border-radius: 10px;
+    margin-bottom: 2px;
   }
   
   .addToCartBttn:hover {
@@ -66,14 +68,15 @@
   }
 
   .favoriteBttn {
-    background-color: transparent;
+    background-color: black;
+    color: white;
     border: 2px solid rgb(19, 19, 19);
     min-width: 100px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
-    border-radius: 15px;
+    border-radius: 10px;
   }
   
   .favoriteBttn:hover {
