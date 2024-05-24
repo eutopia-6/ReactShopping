@@ -16,6 +16,7 @@ export const Navbar = () => {
   const [googleUser, setGoogleUser] = useState(false);
   const [currentUser, setCurrentUser] = useState(0);
   const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleModalOpen = () => {setIsModalOpen(true);};
@@ -27,7 +28,8 @@ export const Navbar = () => {
   const handleRegSubmit = (e) => {
     e.preventDefault();
     const userInfo = {
-      name: name,
+      email: email,
+      name: name, 
       password: password
     }
 
@@ -180,8 +182,8 @@ export const Navbar = () => {
                 className='usernameBox' 
                 type="email"
                 placeholder='Email'
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required/>
 
                 <input 
