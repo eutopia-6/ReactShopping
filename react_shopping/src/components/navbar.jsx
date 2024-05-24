@@ -51,9 +51,18 @@ export const Navbar = () => {
   
   const getUser = (credentialResponse) => {
     var userObject = jwt_decode(credentialResponse);
-    var userEmail = userObject.email;
-    
-
+    const userInfo = {
+      email: userObject.email,
+      name: userObject.name,
+    }
+    fetch('https://react-shopping-flask.vercel.app/user/', {
+      method: "GET",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userInfo)}).catch((error) => {
+        console.error(error);
+      }) 
     setUser(userObject);
     document.getElementById("user").hidden = true;
     setGoogleUser(true);
