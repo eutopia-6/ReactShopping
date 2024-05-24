@@ -180,6 +180,14 @@ export const Navbar = () => {
             onSubmit={handleRegSubmit}>
                 <input 
                 className='usernameBox' 
+                type="name"
+                placeholder='Username'
+                value={email}
+                onChange={(e) => setName(e.target.value)}
+                required/>
+
+                <input 
+                className='usernameBox' 
                 type="email"
                 placeholder='Email'
                 value={email}
