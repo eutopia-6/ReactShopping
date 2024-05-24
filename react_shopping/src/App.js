@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <div className="App-Box">
-        <GoogleOAuthProvider clientId='97815386692-82ttib8dqglele56ndmsf9t0c1l17uii.apps.googleusercontent.com'>
+        <GoogleOAuthProvider clientId='534515032115-eece85p2ciud1sbdnhu303kpnhc0kd0r.apps.googleusercontent.com'>
           <ShopContextProvider>
           <Router>
             <Navbar/>
