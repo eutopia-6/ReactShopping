@@ -12,15 +12,15 @@ db = SQLAlchemy(app)
 class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), unique=True)
+    email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
 
 @app.route('/user/', methods=['POST', 'GET'])
-def home():
+def user():
     if request.method == 'POST':
-        name = request.json.get('name')
+        email = request.json.get('email')
         password = request.json.get('password')
-        new_user = User(name=name, password=password)
+        new_user = User(email=email, password=password)
 
         db.session.add(new_user)
         db.session.commit()

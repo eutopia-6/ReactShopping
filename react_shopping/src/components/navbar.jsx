@@ -49,6 +49,9 @@ export const Navbar = () => {
   
   const getUser = (credentialResponse) => {
     var userObject = jwt_decode(credentialResponse);
+    var userEmail = userObject.email;
+    
+
     setUser(userObject);
     document.getElementById("user").hidden = true;
     setGoogleUser(true);
@@ -119,7 +122,7 @@ export const Navbar = () => {
                 <input 
                 className='usernameBox' 
                 type="username"
-                placeholder='Username'/>
+                placeholder='Email'/>
 
                 <input 
                 className='passwordBox' 
@@ -175,8 +178,8 @@ export const Navbar = () => {
             onSubmit={handleRegSubmit}>
                 <input 
                 className='usernameBox' 
-                type="username"
-                placeholder='Username'
+                type="email"
+                placeholder='email'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required/>
