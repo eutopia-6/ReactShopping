@@ -13,6 +13,7 @@ class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), unique=True)
+    name = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
 
 @app.route('/user/', methods=['POST', 'GET'])
@@ -20,7 +21,8 @@ def user():
     if request.method == 'POST':
         email = request.json.get('email')
         password = request.json.get('password')
-        new_user = User(email=email, password=password)
+        name = request.json.get('name')
+        new_user = User(email=email, password=password, name=name)
 
         db.session.add(new_user)
         db.session.commit()
