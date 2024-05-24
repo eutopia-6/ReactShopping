@@ -5,7 +5,8 @@ from flask_cors import CORS
 app = Flask(__name__)
 cors = CORS(app, resources={r'/*': {'origins': 'https://react-shopping-abal.vercel.app*'}})
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://default:PwgKlWk2dtB9@ep-empty-mud-995772-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://default:PwgKlWk2dtB9@ep-empty-mud-995772.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+# app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://default:PwgKlWk2dtB9@ep-empty-mud-995772-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb"
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///accounts.db'
 db = SQLAlchemy(app)
 
@@ -24,7 +25,7 @@ def user():
 
         db.session.add(new_user)
         db.session.commit()
-        
+
         print("Posted")
         return "Blank1"
     elif request.method =='GET':
