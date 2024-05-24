@@ -24,6 +24,7 @@ def user():
 
         db.session.add(new_user)
         db.session.commit()
+        
         print("Posted")
         return "Blank1"
     elif request.method =='GET':
