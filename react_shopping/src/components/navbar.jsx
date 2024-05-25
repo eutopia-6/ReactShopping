@@ -55,14 +55,12 @@ export const Navbar = () => {
       email: userObject.email,
       name: userObject.name,
     }
-    fetch('https://react-shopping-flask.vercel.app/user/', {
-      method: "GET",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(userInfo)}).catch((error) => {
-        console.error(error);
-      }) 
+
+    var userObjectToURL = encodeURIComponent((JSON.stringify(userInfo)))
+
+    fetch(`https://react-shopping-flask.vercel.app/user/?userInfo=${userObjectToURL}`, {
+      method: "GET"}) 
+
     setUser(userObject);
     document.getElementById("user").hidden = true;
     setGoogleUser(true);
