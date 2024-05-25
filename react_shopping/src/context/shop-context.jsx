@@ -64,6 +64,11 @@ export const ShopContextProvider = (props) => {
             {...prev, 
             [itemId] : prev[itemId] === 1 ? prev[itemId] - 1 : prev[itemId] + 1}))}
 
+    const clearCart = () => {
+        setCartItems(getDefaultCart());
+    }
+    
+
     const contextValue = {
         cartItems, 
         addToCart, 
@@ -73,6 +78,8 @@ export const ShopContextProvider = (props) => {
         productList,
         addToFavorites,
         favoriteItems,
+        clearCart
+
     };
 
   return (

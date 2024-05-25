@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { ShopContext } from "../context/shop-context";
 import axios from "axios";
+import { Shop } from "../pages/shop/shop";
 
 const CARD_OPTIONS = {
 	iconStyle: "solid",
@@ -28,7 +29,9 @@ export function PaymentForm() {
   const elements = useElements();
   const [cardNumber, setCardNumber] = useState();
   const { getTotalCartAmount } = useContext(ShopContext);
-  const totalAmount = getTotalCartAmount();
+  const { clearCart } = useContext(ShopContext);
+  const [totalAmount, setTotalAmount] = useState(getTotalCartAmount());
+
   
   const handleInput = (e) => {
 		e.preventDefault();
@@ -37,31 +40,10 @@ export function PaymentForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const {error, paymentMethod} = await stripe.createPaymentMethod({
-        type: "card",
-        card: elements.getElement(CardElement),
-    })
-
-	if(!error) {
-		try {
-			const {id} = paymentMethod;
-			const response = await axios.post("http://placeHolder", {
-				amount: 1000,
-				id: id
-			});
-	
-			if(response.data.success) {
-				console.log("Successful payment");
-				setSuccess(true);
-			}
-		}
-		catch (error) {
-			console.log("Error: ", error);
-		}
-	  }
-	  else {
-		console.log(error.message);
-	  }
+	console.log("Successful payment");
+	setTotalAmount(0);
+	clearCart();
+	setSuccess(true);
   }
 
 
@@ -75,10 +57,10 @@ export function PaymentForm() {
 					<CardElement options={CARD_OPTIONS}/>
 				</div>
 			</fieldset>
-			<button>Pay</button>
+			<button onClick={handleSubmit}>Pay</button>
 		</form>	:
 		<div>
-			<h2>Just Paid for the Items</h2>
+			<h2 style={{ textAlign: 'center' }}>Just Paid for the Items</h2>
 		</div>
 		}
     </div>
