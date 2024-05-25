@@ -1,9 +1,10 @@
 from flask import Flask, redirect, url_for, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+import json
 
 app = Flask(__name__)
-cors = CORS(app, resources={r'/*': {'origins': ['https://react-shopping-abal.vercel.app*']}})
+cors = CORS(app, resources={r'/*': {'origins': ['https://react-shopping-abal.vercel.app*', 'http://localhost:3000*']}})
 
 app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://default:PwgKlWk2dtB9@ep-empty-mud-995772-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb"
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///accounts.db'
@@ -29,15 +30,14 @@ def user():
         print("Posted")
         return "Blank1"
     elif request.method =='GET':
-        email = request.json.get('email')
-        password = request.json.get('password')
-        name = request.json.get('name')
+        userInfo_string = request.args.get('userInfo')
+        userData = json.loads(userInfo_string)
 
-        existing_user = User.query.filter_by(email=email).first()
+        existing_user = User.query.filter_by(email=userData.get("email")).first()
         if (existing_user):
             return existing_user
         else:
-            new_user = User(email=email, password=password, name=name)
+            new_user = User(email=userData.get("email"), password=None, name=userData.get("name"))
             db.session.add(new_user)
             db.session.commit()
 
